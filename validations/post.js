@@ -1,8 +1,8 @@
 import { body } from "express-validator";
 
 export const postCreateValidation = [
-  body("title", "Enter the post name").isLength({ min: 3 }).isString(),
-  body("text", "Enter the text of the post")
+  body("title", "Enter title of the post").isLength({ min: 3 }).isString(),
+  body("text", "Enter text of the post")
     .isLength({
       min: 3,
     })

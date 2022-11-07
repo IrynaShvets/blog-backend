@@ -136,3 +136,21 @@ export const update = async (req, res) => {
     });
   }
 };
+
+/* export const createComment = async (req, res) => {
+  try {
+    const doc = new PostModel({
+      comment: req.body.comment,
+      user: req.userId,
+    });
+
+    const post = await doc.save();
+    res.json(post);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Failed to create comments",
+    });
+  }
+};
+ */

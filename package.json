@@ -11,6 +11,7 @@
   "author": "iryna_shvets <irinashwetsnew578@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",

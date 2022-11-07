@@ -10,11 +10,15 @@ import {
   registerValidation,
   loginValidation,
 } from "./validations/index.js";
-import { UserController, PostController } from "./controllers/index.js";
+import {
+  UserController,
+  PostController,
+  CommentController,
+} from "./controllers/index.js";
 import { checkAuth, handleValidationErrors } from "./middlewares/index.js";
 
 const { DB_HOST } = process.env;
-console.log(DB_HOST);
+
 mongoose
   .connect(DB_HOST)
   .then(() => {
@@ -73,6 +77,13 @@ app.post(
   postCreateValidation,
   handleValidationErrors,
   PostController.create
+);
+app.post(
+  "/posts/comment",
+  checkAuth,
+  postCreateValidation,
+  handleValidationErrors,
+  CommentController.createComment
 );
 app.delete("/posts/:id", checkAuth, PostController.remove);
 app.patch(
